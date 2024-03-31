@@ -1,14 +1,19 @@
 
 <script setup>
-import ListOrTrolley from './components/ListOrTrolley.vue'
+import jumpbtn from './components/jumpbtn.vue'
+// test
+// import List from './views/List.vue';
+// import Trolley from './views/Trolley.vue';
 
 </script>
 
 <template>
   <div id="app">
     <div class="title">购物车首页</div>
-    <ListOrTrolley/>
-    <route-view></route-view>
+    <jumpbtn/>
+    <router-view></router-view>
+    <!-- test -->
+    <!-- <list/> -->
   </div>
 </template>
 

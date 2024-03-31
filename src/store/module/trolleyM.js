@@ -70,6 +70,7 @@ const actions = {
                 //rollback
                 ctx.commit('setWantP', buffer)
             }
+            console.log('buy')
         })()
     },
     // 添加购物车逻辑上是再getP之后执行的
@@ -87,17 +88,18 @@ const actions = {
                 ctx.commit('addAgain', product)
             }
         }
+        console.log('addTo')
     }
 }
 const getters = {
     // 完善产品信息
-    _wantP: (state, _, store) => {
+    _wantP: (state, _, rootState) => {
         flag = false
         //根据id找到产品完整信息
         const _wps = state.wantP.map(wp => {
-            const wpToProduct = store.productM.products.find(p => p.id === wp.id)
+            const wpToProduct = rootState.productsM.products.find(p => p.id === wp.id)
             return {
-                // 每件物品的个数
+                // 每件物品个数'在购物车的
                 count,
                 // 每件物品的编号
                 id: wpToProduct.id,
@@ -107,20 +109,22 @@ const getters = {
         })
         //表示 恢复工作 完毕
         flag = true
+        console.log('_wantP')
     },
     //计算总价
-    cartTotalPrice: (_, getters) => {
+    TotalPrice: (_, getters) => {
+        console.log('TotalPrice')
         return getters._wantP.reduce((total, p) => {
             return total + p.price * p.count
         }, 0)
     }
 }
 
-const trolleyModule = {
+const trolleyM = {
     namespaced: true,
     state,
     mutations,
     actions,
     getters
 }
-export default trolleyModule
+export default trolleyM

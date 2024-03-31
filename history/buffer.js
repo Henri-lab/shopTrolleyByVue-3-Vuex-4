@@ -56,3 +56,11 @@ const store = createStore({
 
     }
 })
+
+// #登录时
+ // 购物车页面增加了userID参数
+    // loginVue中的comfirm后，在router中已经更新相应的route路径
+    //查询登录框中的输入值(userName--->userID)
+    const userID=route.query.userID
+    // 计算路径并更新router
+    router.push(`/trolley?userID=${userID}`)

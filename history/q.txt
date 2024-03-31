@@ -1,0 +1,9 @@
+ <!-- test数据；???要求每5个div为一组依照顺序注入'.list'
+            <div class="order grid-item">1</div>
+            <div class="title grid-item">apple</div>
+            <div class="price grid-item">8888</div>
+            <div class="number grid-item">20</div>
+            <div class="btn grid-item"><el-button type="success">添加到购物车</el-button></div> -->
+            <!-- 利用area+自动排列 -->
+            <!-- ？？？利用js指定行列位置 -->
+            <!-- css调整自动排列方式 -->

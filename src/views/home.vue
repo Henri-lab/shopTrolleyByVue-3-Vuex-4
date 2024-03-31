@@ -11,13 +11,14 @@
             <div class="right-arrow" @click="moveRight">️➡️</div>
         </div>
     </div>
+    <router-view></router-view>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 
 // 实现一个方法，让每张图片调整到对应的位置
-let curIndex = 0; // 图片的索引值，确认当前处于视口中心的那张图片
+let curIndex = 3; // 图片的索引值，确认当前处于视口中心的那张图片
 const xoffSet = 50; // x轴的偏移量
 const scaleSpeed = 0.8; // 缩放的速度
 const rotateSpeed = 46; // y轴旋转的速度
@@ -98,14 +99,26 @@ html {
         top: 350px;
         right: -200px;
 
-        .arrow {
+        .left-arrow {
             width: 50px;
             height: 50px;
             text-align: center;
-            font-size: 30px;
+            font-size: 40px;
+            position: absolute;
+            top:-230px;
+            left:-970px
         }
 
-        .arrow:hover {
+        .right-arrow {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: 40px;
+            position: absolute;
+            top:-230px;
+        }
+
+        .left-arrow:hover,.right-arrow:hover {
             cursor: pointer;
         }
     }
