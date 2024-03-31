@@ -11,14 +11,27 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router';
+import { useStore } from 'vuex';
 const router = useRouter()
 const route = useRoute()
+const store = useStore()
 const userName = ref('')
 const password = ref('')
+// 只提交账号名称；（一同提交密码：待续）
 const confirm = () => {
-    // 确认登录后，会进入用户的购物车
-    // 首先获得用户的名字,并传递给要去的路由;(待续：为每一个用户建立为一个唯一的id)
-    router.push({ name: 'user_trolley', params: { userID: userName.value } })
+    //  输入了账户
+    if (userName.value) {
+        // 确认登录后，会进入用户的购物车
+        // 先 修改登录状态
+        store.commit('loginCheckM/updateValue', 1)
+        // 首先获得用户的名字,并传递给要去的路由;(待续：为每一个用户建立为一个唯一的id)
+        router.push({ name: 'user_trolley', params: { userID: userName.value } })
+        //更新登录账户名称2
+        store.commit('loginCheckM/updateValue2', userName.value)
+    } else {
+        alert('请输入账户')
+
+    }
 }
 </script>
 

@@ -2,26 +2,28 @@
 // @login 登录状态，0表示未登录
 const state = {
     login: 0,
-    user: null 
+    userID: 'default' 
 }
 
 const getters = {
     getterValue: state => {
         return state.login
+    },
+      getterValue2: state => {
+        return state.userID
     }
 }
 
 const mutations = {
     updateValue: (state, payload) => {
-        state.value = payload
+        state.login = payload
+    },
+     updateValue2: (state, payload) => {
+        state.userID = payload
     }
 }
 
-const actions = {
-    updateActionValue({ commit }) {
-        commit('updateValue', payload)
-    }
-}
+const actions = {}
 
 const loginCheckM = {
     namespaced: true,

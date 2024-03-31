@@ -3,27 +3,27 @@ import { buyProducts } from '../../../product'
 
 const state = {
     // 添加在购物车的产品
-    // 记录简化为{id，count}
+    // 由于只是添加并不需要展示购物车页面，所以记录简化为{id，count}
     wantP: [],
     // 交易状态
     deal: null,
     // 信息完善状态
-    flag: false
+    // flag: false
 }
 
 
 const mutations = {
+    // 展示视图时要用
     setWantP(state, new_wantP) {
         state.wantP = new_wantP
     },
     setDeal(state, newStatus) {
         state.deal = newStatus
     },
-    // 
+    // 添加至购物车时用
     addFirst(state, { id }) {
         state.wantP.push({
             id,
-            price,
             count: 1
         })
     },
@@ -94,9 +94,10 @@ const actions = {
 const getters = {
     // 完善产品信息
     _wantP: (state, _, rootState) => {
-        flag = false
+        console.log('补全购物车产品信息')
+        // flag = false
         //根据id找到产品完整信息
-        const _wps = state.wantP.map(wp => {
+        return state.wantP.map(wp => {
             const wpToProduct = rootState.productsM.products.find(p => p.id === wp.id)
             return {
                 // 每件物品个数'在购物车的
@@ -108,8 +109,7 @@ const getters = {
             }
         })
         //表示 恢复工作 完毕
-        flag = true
-        console.log('_wantP')
+        // flag = true
     },
     //计算总价
     TotalPrice: (_, getters) => {
