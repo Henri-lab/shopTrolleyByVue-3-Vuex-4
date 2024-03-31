@@ -9,7 +9,7 @@ import jumpbtn from './components/jumpbtn.vue'
 
 <template>
   <div id="app">
-    <div class="title">购物车首页</div>
+    <div class="title">购物车作业（测试）</div>
     <jumpbtn/>
     <router-view></router-view>
     <!-- test -->

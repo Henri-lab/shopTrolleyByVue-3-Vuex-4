@@ -5,10 +5,10 @@
         <el-button class="login" :plain="true" @click="login">登录</el-button>
         <el-button class="quit" :plain="true" @click="quit">退出</el-button>
         <!-- 可以将下列部分放在另一个组件中 ;(待续) -->
-        <span class="note" v-show="isShow2 === 'greet'">欢迎来到我的周末小作业!</span>
+        <span class="note" v-show="isShow2 === 'greet'">测试开始</span>
         <!-- 主人名字可以动态的：数据源是store的loginCheckM模块中的user信息 ;(待续)-->
         <span class="note" v-show="isShow2 === 'outLine'">已离线</span>
-        <span class="note" v-show="isShow2 === 'bye'">主人再见~~</span>
+        <span class="note" v-show="isShow2 === 'bye'">测试结束~~</span>
     </div>
 </template>
 
@@ -40,9 +40,6 @@ const openVn = () => {
     })
     // 导航到trolley
     router.push({name:'user_trolley',params:{userID:'default'}})//params 只能用于命名路由
-    //将购物车的数据进行补全
-    const _wantP=store.getters['trolleyM/_wantP']
-    store.commit('trolleyM/setWantP',_wantP)
 
 }
 

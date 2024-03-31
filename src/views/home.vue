@@ -1,11 +1,11 @@
 <template>
     <div class="container" ref="container">
-        <img src="./imgs/img1.jpg" />
-        <img src="./imgs/img2.jpg" />
-        <img src="./imgs/img3.jpg" />
-        <img src="./imgs/img4.jpg" />
-        <img src="./imgs/img5.jpg" />
-        <img src="./imgs/img6.jpg" />
+        <img src="../img/img1.jpg" />
+        <img src="../img/img2.jpg" />
+        <img src="../img/img3.jpg" />
+        <img src="../img/img4.jpg" />
+        <img src="../img/img5.jpg" />
+        <img src="../img/img6.jpg" />
         <div class="btns">
             <div class="left-arrow" @click="moveLeft">⬅️</div>
             <div class="right-arrow" @click="moveRight">️➡️</div>

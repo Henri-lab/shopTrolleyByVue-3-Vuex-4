@@ -40,7 +40,7 @@ const confirm = () => {
     width: 40%;
     height: 100px;
     margin: 0 auto;
-    margin-top: -280px;
+    margin-top: -480px;
     position: relative;
 
 }
@@ -53,8 +53,8 @@ const confirm = () => {
 
 .confirm {
     position: absolute;
-    top: 100%;
-    left: 50%;
+    top: 43%;
+    left: 79%;
     transform: translate(-50%, 0);
 }
 
